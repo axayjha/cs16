@@ -8,7 +8,7 @@
 
  #include <stdio.h>
 
- main()
+ int main()
  {
  	float degC, degF;
 
@@ -17,5 +17,12 @@
 
  	degF = (9*degC)/5 + 32;
 
- 	printf("\n%.2f degC in degF is %.2f\n", degF);
+ 	printf("%.2f degC in degF is %.2f\n", degC, degF);
  }
+
+ /* Output
+
+ Enter the temperature in degree Celcius: 100
+ 100.00 degC in degF is 212.00
+
+*/

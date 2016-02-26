@@ -8,11 +8,17 @@
 
 #include <stdio.h>
 
-main()
+int main()
 {
 	float number;
 	number = 10.4;
 
-	printf("%.2f", number); 
+	printf("%.2f\n", number); 
 	/* .2f tells printf to print only upto two digits after the decimal point */
 }
+
+/* Output
+
+10.40
+
+*/

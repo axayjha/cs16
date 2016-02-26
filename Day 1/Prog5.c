@@ -9,7 +9,7 @@
  #include <stdio.h>
  #define PIE 3.1414
 
- main()
+ int main()
  {
  	float radius, area, circumference;
 
@@ -19,6 +19,14 @@
  	area = PIE*radius*radius;
  	circumference = 2*PIE*radius;
 
- 	printf("\nArea: %.2f \nCirumference: %.2f\n", area, circumference);
+ 	printf("Area: %.2f \nCirumference: %.2f\n", area, circumference);
 
  }
+
+ /* Output
+
+ Enter the radius of the circle: 5
+ Area: 78.54 
+ Cirumference: 31.41
+
+ */

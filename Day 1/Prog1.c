@@ -9,8 +9,13 @@
 #include <stdio.h>  
 /*A preprocessor directive to include standard input output library header file*/
 
-main()
+int main()
 {
 	printf("Hello World\n");  //prints the string in the console
 }
 
+/* Output
+
+ Hello World
+ 
+*/
