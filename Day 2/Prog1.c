@@ -9,7 +9,7 @@
 
  #include <stdio.h>
 
- main()
+ int main()
  {
  	int a=1, b=3, c=2, d=4, e =4, i;
 
