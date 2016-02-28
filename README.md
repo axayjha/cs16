@@ -13,7 +13,9 @@ Using run.sh
 -------------------
 
 First change the permissions to make the script executable
+
 user@terminal:~$ chmod 744 run.sh
 
 Then simply do this to compile and run a “program.c” in one go-
+
 user@terminal:~$ ./run.sh program.c
