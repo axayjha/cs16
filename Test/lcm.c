@@ -1,3 +1,14 @@
+/* Test
+ * Question 7
+ * Write a program to find LCM of two positive integers entered by user
+ * Version 1
+ *
+ * Author - 
+ * Akshay Anand
+ * CSE 2nd Sem - St. Thomas' College of Engineering & Technology
+ */
+
+
 #include <stdio.h>
 
 int main()
@@ -21,7 +32,16 @@ int main()
 
 	lcm = lcm*n1*n2;
 
-	printf("%d\n", lcm);
+	printf("LCM = %d\n", lcm);
 
 }
+
+/* Output
+
+Enter two numbers: 
+14
+21
+LCM = 42
+
+*/
 

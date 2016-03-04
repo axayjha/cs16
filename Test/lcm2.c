@@ -1,4 +1,13 @@
-/* C program to find LCM of two positive integers entered by user */
+/* Test
+ * Question 7
+ * Write a program to find LCM of two positive integers entered by user
+ * Version 2
+ *
+ * Author - 
+ * Akshay Anand
+ * CSE 2nd Sem - St. Thomas' College of Engineering & Technology
+ */
+
 
 #include <stdio.h>
 int main()
@@ -18,3 +27,11 @@ int main()
   }
   return 0;
 }
+
+/* Output
+
+Enter two positive integers: 12
+21
+LCM of 12 and 21 is 84
+
+*/
