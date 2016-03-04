@@ -11,10 +11,12 @@
  
 int main()
 {
-   int i, first, last, mid, length, number, array[100];
+   int i, first, last, mid, length, number;
  
    printf("Enter the length of the array: ");
    scanf("%d", &length);
+   
+   int array[length];
  
    printf("Enter %d elements of the array in ascending order: \n", length);
  
