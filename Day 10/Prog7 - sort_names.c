@@ -15,12 +15,11 @@
  	int n, i, j;
  	printf("Enter the strength of the class: ");
  	scanf("%d", &n);
- 	char class[n][80], sortedclass[n][80], str[80];
+ 	char class[n][80];
 
  	printf("Enter the names of the students:\n");
  	for(i=0; i<n; i++) scanf("%s", class[i]);
 
- 	strcpy(str, class[0]);	
 
  	for(i=0; i<n; i++)	
  	{
