@@ -27,10 +27,15 @@ Alternate way
 ---------------
 
 Set the PATH variable using export command
+
 `sudo su`
+
 `cp run.sh /usr/bin/run`
+
 `export PATH=/usr/bin:"${PATH}"`
 
+
 and then to compile and run, you just need to do: 
+
 `user@terminal:~$ run program.c`
 
