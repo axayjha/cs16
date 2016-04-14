@@ -22,3 +22,15 @@ First change the permissions to make the script executable
 Then simply do this to compile and run a “program.c” in one go-
 
 `user@terminal:~$ ./run.sh program.c`
+
+Alternate way
+---------------
+
+Set the PATH variable using export command
+`sudo su`
+`cp run.sh /usr/bin/run`
+`export PATH=/usr/bin:"${PATH}"`
+
+and then to compile and run, you just need to do: 
+`user@terminal:~$ run program.c`
+
