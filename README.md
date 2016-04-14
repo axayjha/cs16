@@ -28,11 +28,9 @@ Alternate way
 
 Set the PATH variable using export command
 
-`sudo su`
+`cp run.sh /home/user/Documents/run`
 
-`cp run.sh /usr/bin/run`
-
-`export PATH=/usr/bin:"${PATH}"`
+`export PATH=/home/user/Documents:"${PATH}"`
 
 
 and then to compile and run, you just need to do: 
