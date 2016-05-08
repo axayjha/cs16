@@ -27,13 +27,13 @@ void addTime(time t1, time t2)
 		m+=1;
 		s-=60;
 	}
-	m=t1.mm + t2.mm;
+	m+= (t1.mm + t2.mm);
 	if (m>=60)
 	{
 		h+=1;
 		m-=60;
 	}
-	h=t1.hh+t2.hh;
+	h+=(t1.hh+t2.hh);
 
 	printf("Sum: %d:%d:%d\n", h,m,s);
 }
@@ -68,20 +68,20 @@ void subTime(time t2, time t1)
 		t2.mm-=60;
 	}
 
-	if (t1.ss <= t2.ss) s=t2.ss-t1.ss;
+	if (t1.ss <= t2.ss) s+= (t2.ss-t1.ss);
 	else 
 	{
-		s=t2.ss + 60 - t1.ss;
+		s+= (t2.ss + 60 - t1.ss);
 		m-=1;
 	}
 	
-	if(t1.mm <= t2.mm) m=t2.mm - t1.mm;
+	if(t1.mm <= t2.mm) m+=(t2.mm - t1.mm);
 	else {
-		m=t2.mm +60 - t1.ss;
+		m+= (t2.mm +60 - t1.mm);
 		h-=1;
 	}
 	
-	h=t2.hh - t1.hh;
+	h+= (t2.hh - t1.hh);
 
 	printf("Difference: %d:%d:%d\n", h,m,s);
 
@@ -139,6 +139,7 @@ int main()
 
 
 }
+
 
 /* Output
 
