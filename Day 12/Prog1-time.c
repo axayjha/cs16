@@ -139,3 +139,20 @@ int main()
 
 
 }
+
+/* Output
+
+Enter time #1 (in hh:mm:ss format): 8:40:30
+Enter time #2 (in hh:mm:ss format): 6:30:40
+Second time should be greater than first one. Enter again.
+Enter time #1 (in hh:mm:ss format): 6:30:40
+Enter time #2 (in hh:mm:ss format): 8:40:30
+
+What do u want to do:
+-------------------------
+1. Add the times
+2. Subtract the times
+Your choice > 2
+Difference: 2:10:50
+
+*/
