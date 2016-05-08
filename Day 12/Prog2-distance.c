@@ -1,5 +1,5 @@
 /* Day 12
- * Question 1
+ * Question 2
  * Write a menu driven program to add, subtract, read, display two distances in km, m using pointer variable 
  * and passing it to functions
  * Author - 
