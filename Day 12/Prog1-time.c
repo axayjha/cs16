@@ -8,8 +8,6 @@
 
 #include <stdio.h>
 
-
-
 typedef struct
 {
 	int hh,mm,ss;
@@ -17,31 +15,98 @@ typedef struct
 
 } time;
 
+void addTime(time, time);
+void subTime(time, time);
+void getTime(time *);
+void displayTime(time);
+long int seconds(time);
+
+
+int main()
+{
+	int choice;
+	time t1, t2;
+
+	menu:
+	printf("\nWhat do u want to do: \n");
+	printf("-------------------------\n");
+	printf("1. Add the times \n");
+	printf("2. Subtract the times \n");
+
+
+
+
+	printf("Your choice > ");
+	scanf("%d", &choice);
+
+
+
+	input:
+	printf("Enter time #1 (in hh:mm:ss format): ");
+	getTime(&t1);
+
+	printf("Enter time #2 (in hh:mm:ss format): ");
+	getTime(&t2);
+
+	if((seconds(t1) > seconds(t2)) && choice==2) 
+	{
+		printf("Second time should be greater than first one. Enter again. \n");
+		goto input;
+
+	}
+
+	
+	switch(choice)
+	{
+		case 1:
+			addTime(t1,t2);
+			break;
+		case 2:
+			subTime(t2,t1);
+			break;
+		default:
+			printf("Invalid option. Enter the option number (1 or 2)\n"); 
+			printf("Try again\n");
+			goto menu;					
+
+	}
+	return 0;
+
+
+
+
+}
+
+
+
+
 void addTime(time t1, time t2)
 {
-	int h,m,s;
-	h=m=s=0;
-	s=t1.ss+t2.ss;
-	if(s>=60)
-	{
-		m+=1;
-		s-=60;
-	}
-	m+= (t1.mm + t2.mm);
-	if (m>=60)
-	{
-		h+=1;
-		m-=60;
-	}
-	h+=(t1.hh+t2.hh);
+	time t;
+	t.hh=t.mm=t.ss=0;
 
-	printf("Sum: %d:%d:%d\n", h,m,s);
+	t.ss=t1.ss+t2.ss;
+	if(t.ss>=60)
+	{
+		t.mm+=1;
+		t.ss-=60;
+	}
+	t.mm+= (t1.mm + t2.mm);
+	if (t.mm>=60)
+	{
+		t.hh+=1;
+		t.mm-=60;
+	}
+	t.hh+=(t1.hh+t2.hh);
+
+	printf("Sum: ");
+	displayTime(t);
 }
 
 void subTime(time t2, time t1)
 {
-	int h,m,s;
-	h=m=s=0;
+	time t;
+	t.hh=t.mm=t.ss=0;
 
 
 	if(t1.ss>=60)
@@ -68,77 +133,45 @@ void subTime(time t2, time t1)
 		t2.mm-=60;
 	}
 
-	if (t1.ss <= t2.ss) s+= (t2.ss-t1.ss);
+	if (t1.ss <= t2.ss) t.ss+= (t2.ss-t1.ss);
 	else 
 	{
-		s+= (t2.ss + 60 - t1.ss);
-		m-=1;
+		t.ss+= (t2.ss + 60 - t1.ss);
+		t.mm-=1;
 	}
 	
-	if(t1.mm <= t2.mm) m+=(t2.mm - t1.mm);
+	if(t1.mm <= t2.mm) t.mm+=(t2.mm - t1.mm);
 	else {
-		m+= (t2.mm +60 - t1.mm);
-		h-=1;
+		t.mm+= (t2.mm +60 - t1.mm);
+		t.hh-=1;
 	}
 	
-	h+= (t2.hh - t1.hh);
+	t.hh+= (t2.hh - t1.hh);
 
-	printf("Difference: %d:%d:%d\n", h,m,s);
+	printf("Difference: ");
+	displayTime(t);
 
 
 }
 
-int main()
+void getTime(time *t)
 {
-	int choice;
-	time t1, t2;
+	int h,m,s;
+	scanf("%d:%d:%d", &h, &m, &s);
+	(*t).hh=h; (*t).mm=m; (*t).ss=s; 
+}
 
-	input:
-	printf("Enter time #1 (in hh:mm:ss format): ");
-	scanf("%d:%d:%d", &t1.hh, &t1.mm, &t1.ss);
+void displayTime(time t)
+{
+	printf("%d:%d:%d\n", t.hh,t.mm,t.ss);
+}
 
-	printf("Enter time #2 (in hh:mm:ss format): ");
-	scanf("%d:%d:%d", &t2.hh, &t2.mm, &t2.ss);
-
-	if((t1.hh*60*60 + t1.mm*60 + t1.ss) > (t2.hh*60*60 + t2.mm*60 + t2.ss)) 
-	{
-		printf("Second time should be greater than first one. Enter again. \n");
-		goto input;
-
-	}
-
-	menu:
-	printf("\nWhat do u want to do: \n");
-	printf("-------------------------\n");
-	printf("1. Add the times \n");
-	printf("2. Subtract the times \n");
-
-
-
-
-	printf("Your choice > ");
-	scanf("%d", &choice);
-
-	switch(choice)
-	{
-		case 1:
-			addTime(t1,t2);
-			break;
-		case 2:
-			subTime(t2,t1);
-			break;
-		default:
-			printf("Invalid option. Enter the option number (1 or 2)\n"); 
-			printf("Try again\n");
-			goto menu;					
-
-	}
-	return 0;
-
-
-
+long int seconds(time t)
+{
+	return t.hh*60*60 + t.mm*60 + t.ss;
 
 }
+
 
 
 /* Output
