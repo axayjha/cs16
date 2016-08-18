@@ -6,7 +6,7 @@ The codes for each program done so far in computer lab and class tests in 2nd Se
 
 **run.sh** – a shell script to compile and run a c code in one go without having to type 
 `gcc prog.c -o prog.out`
-and `./prog.out` seperately
+and `./prog.out` separately
 
 
 Using run.sh
