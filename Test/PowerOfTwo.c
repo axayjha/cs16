@@ -12,7 +12,7 @@
 
 /* better version
 
-bool powerOfTwo(int n){ /* constant time */
+bool powerOfTwo(int n){ // constant time
 	return ((n & (n-1)) == 0);
 }
 
