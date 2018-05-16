@@ -8,12 +8,21 @@
  */
 
 #include <stdio.h>
-#define TRUE 1
-#define FALSE 0
+#include <stdbool.h>
 
+/* better version
+
+bool powerOfTwo(int n){ /* constant time */
+	return ((n & (n-1)) == 0);
+}
+
+*/
+
+// naive method	
 int main()
 {
-	int i,powerOfTwo, num, result=1;
+	int i, num, result=1;
+	bool powerOfTwo;
 
 	printf("Enter a number: ");
 	scanf("%d", &num);
@@ -21,21 +30,23 @@ int main()
 	for(i=1; i< num/2; i++)
 	{
 		result = result*2;
-		powerOfTwo=TRUE;
+		powerOfTwo=true;
 
 		if (result == num){
 			printf("%dth power of 2\n", i);
 			break;
 		}
 		
-		powerOfTwo=FALSE;
+		powerOfTwo=false;
 
 
 	}
-	if (powerOfTwo == FALSE){
+	if (powerOfTwo == false){
 		printf("Not a power of 2\n");
 	}
 }
+
+
 
 /* Output
 
